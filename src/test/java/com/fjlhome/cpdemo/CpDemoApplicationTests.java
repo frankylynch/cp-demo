@@ -24,5 +24,12 @@ class CpDemoApplicationTests {
 		double actual = mathUtils.add(1, 1);
 		assertThat(actual).isEqualTo(expected);
 	}
+	@Test
+	void shouldPassIfSubtractionMatches() {
+		MathUtils mathUtils = new MathUtils();
+		double expected = 0;
+		double actual = mathUtils.subtract(1, 1);
+		assertThat(actual).isEqualTo(expected);
+	}
 
 }

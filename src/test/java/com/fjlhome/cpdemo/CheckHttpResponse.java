@@ -35,7 +35,7 @@ public class CheckHttpResponse {
         assertThat(response.contains("Hello"));
     }
 
-//write a test to check a httpresponse body for the word "index"
+//write a test to check a http response body for the word "index"
     @Test
     public void shouldPassIfIndexMatches(){
         String response = this.restTemplate.getForObject("http://localhost:" + port + "/index" ,String.class);

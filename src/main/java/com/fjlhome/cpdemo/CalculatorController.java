@@ -14,7 +14,7 @@ public class CalculatorController {
 
     @GetMapping("/calculator")
     public String calculatorPage(Model model) {
-        return "calculator-display";
+        return "calculator";
     }
 
     @PostMapping("/calculate")
