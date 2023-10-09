@@ -1,5 +1,4 @@
-package com.fjlhome.cpdemo;
-
+package com.fjlhome.cpdemo.processor;
 
 
 public class CalculatorProcessor {
@@ -9,10 +8,8 @@ public class CalculatorProcessor {
 
     // 2. Private member to maintain the running total. It is initialized to 0.
     private Double _runningTotal = 0D;
-
     private Double _displayNumber = 0D;
     private Double _lastNumber = 0D;
-
     private String _lastOperation = null;
 
     // 3. Private constructor to prevent instantiation from other classes.
@@ -78,8 +75,7 @@ public class CalculatorProcessor {
         // store the number as the _lastNumber if supplied
         _lastNumber = (number != null)?number:_lastNumber;
 
-
-        // log _runningTotal, _lastNumber, _lastOperation, _displayNumber
+        // log to console
         System.out.println("---------: ");
         System.out.println("runningTotal: " + _runningTotal);
         System.out.println("number: " + number);
@@ -92,7 +88,6 @@ public class CalculatorProcessor {
         return _runningTotal;
 
     }
-
 
     public double getRunningTotal() {
         return _runningTotal.doubleValue();

@@ -1,4 +1,4 @@
-package com.fjlhome.cpdemo;
+package com.fjlhome.cpdemo.controller;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,20 +17,6 @@ public class MainPageController {
     public String home(HttpServletResponse response) {
         response.setContentType("text/html");
         return "home";
-    }
-
-    //generate a page at localhost:8080/index
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index(HttpServletResponse response) {
-        response.setContentType("text/html");
-        return "index";
-    }
-
-    //generate a hello-world page at localhost:8080/hello
-    @GetMapping("/hello2")
-    public String hello(Model model) {
-        model.addAttribute("message", "Hello, Thymeleaf!");
-        return "hello-world"; // This maps to "hello-world.html"
     }
 }
 
