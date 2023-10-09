@@ -1,0 +1,84 @@
+
+Co-pilot observations
+---------------------
+
+Copilot seems like great tool.
+I have been looking at some videos and docs on this over the past few months, but to get a feel for it I decided to try it out on a small project.
+
+  I started with a freshly generated spring boot application. I asked ChatGPT to generate the main parts of a calculator webapp.
+  This generated code with an html input box an operation selector, an output box and a submit button.
+  It also generated bare bones controller code.
+
+  I then used Copilot to:
+
+1. Code Suggestions and Autocompletion:
+   - GitHub Copilot integrates with code editors like Visual Studio Code, intellij, VS code to provide real-time code suggestions and auto completions.
+   - It can offer suggestions for completing lines or blocks of code as you type, helping you write code faster and with fewer errors.
+   - The suggestions are context-aware and are generated based on the code you are currently working on.
+
+for instance -after  generating thymeleaf and bootstrap code (using ChatGPT) for add, subtract, multiply, divided co-pilot suggested adding
+   form buttons for additional scientific functions
+    <button class="btn btn-secondary btn-block" type="submit" name="operation" value="%">%</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="sqrt">√</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="^">^</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="log">log</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="sin">sin</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="cos">cos</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="tan">tan</button>
+
+
+2. Code Generation and multi language support:
+   - Copilot can generate entire functions, classes, or code snippets based on natural language descriptions or comments you provide.
+
+   Its not as good as chatGPT for this which seems to be able to generate full applications but it will generate small sections of code and small classes.
+   I did use to generate a first attempt at a singleton pattern calculator processor class which it did do.
+
+   I also used it to generate a simple math utils class. I could generate context specific functions based on comments, such as:
+
+       // generate a method that multiplies the inputArray by a multiplier and returns the outputArray
+       public double [] multiplyArray(double multiplier) {
+           for (int i = 0; i < inputArray.length; i++) {
+               outputArray[i] = inputArray[i] * multiplier;
+           }
+           return outputArray;
+       }
+
+    I could get co-pilot to generate a tests for the math utils class by using the comment:
+	//generate a test that checks the mathUtils add method returns the addition of two input numbers
+	@Test
+	void shouldPassIfAdditionMatches() {
+		MathUtils mathUtils = new MathUtils();
+		double expected = 2;
+		double actual = mathUtils.add(1, 1);
+		assertThat(actual).isEqualTo(expected);
+	}
+
+
+3 - Copilot supports multiple programming languages and frameworks, allowing you to work with a wide range of technologies.
+   - It can provide suggestions and code generation in languages such as Python, JavaScript, Java, C++, and more.
+
+       It would also offer code completion suggestions based on the context of multiple files, spanning more than one technology.
+       It could offer suggestions to change java controller code after understanding the context of the thymeleaf linked html page and seemed to understand the intention of the code.
+
+
+4. Context-Awareness:
+   - Copilot analyzes the code context, including variable names, function names, and project structure, to provide relevant suggestions.
+   - It understands the intent behind your code and tries to generate code that aligns with your project's goals.
+
+    Within the Calculator processor class it would offer suggestions as I was coding and included sections of logic that I had not yet considered.
+
+5. Documentation and Comments:
+   - it helped generate documentation comments, making it easier to document your code as you write it.
+   - It can explain code snippets and provide inline comments for better code comprehension.
+
+
+
+6. Code Quality and Best Practices:
+   - Copilot can suggest improvements for code quality and adherence to best practices.
+   - It can identify and suggest fixes for potential code vulnerabilities or performance issues.
+
+
+
+7. Git Integration:
+   - GitHub Copilot seamlessly integrates with Git, allowing you to manage your code changes and collaborate with others through version control.
+   - It can assist with writing commit messages and understanding Git commands.
