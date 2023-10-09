@@ -9,14 +9,14 @@ I have been looking at some videos and docs on this over the past few months, bu
   This generated code with an html input box an operation selector, an output box and a submit button.
   It also generated bare bones controller code.
 
-  I then used Copilot to:
+I then used Copilot to:
 
 1. Code Suggestions and Autocompletion:
    - GitHub Copilot integrates with code editors like Visual Studio Code, intellij, VS code to provide real-time code suggestions and auto completions.
    - It can offer suggestions for completing lines or blocks of code as you type, helping you write code faster and with fewer errors.
    - The suggestions are context-aware and are generated based on the code you are currently working on.
 
-for instance -after  generating thymeleaf and bootstrap code (using ChatGPT) for add, subtract, multiply, divided co-pilot suggested adding
+For instance -after  generating thymeleaf and bootstrap code (using ChatGPT) for add, subtract, multiply, divided co-pilot suggested adding
    form buttons for additional scientific functions
     <button class="btn btn-secondary btn-block" type="submit" name="operation" value="%">%</button>
         <button class="btn btn-secondary btn-block" type="submit" name="operation" value="sqrt">√</button>
@@ -53,6 +53,13 @@ for instance -after  generating thymeleaf and bootstrap code (using ChatGPT) for
 		assertThat(actual).isEqualTo(expected);
 	}
 
+	I could also get it to generate a test for the calculator controller class by using the comment:
+	// write a http test for the calculator page
+    @Test
+    public void shouldPassIfCalculatorPageMatches(){
+        String response = this.restTemplate.getForObject("http://localhost:" + port + "/calculator" ,String.class);
+        assertThat(response.contains("calculator"));
+    }
 
 3 - Copilot supports multiple programming languages and frameworks, allowing you to work with a wide range of technologies.
    - It can provide suggestions and code generation in languages such as Python, JavaScript, Java, C++, and more.
@@ -60,25 +67,31 @@ for instance -after  generating thymeleaf and bootstrap code (using ChatGPT) for
        It would also offer code completion suggestions based on the context of multiple files, spanning more than one technology.
        It could offer suggestions to change java controller code after understanding the context of the thymeleaf linked html page and seemed to understand the intention of the code.
 
-
 4. Context-Awareness:
    - Copilot analyzes the code context, including variable names, function names, and project structure, to provide relevant suggestions.
    - It understands the intent behind your code and tries to generate code that aligns with your project's goals.
 
     Within the Calculator processor class it would offer suggestions as I was coding and included sections of logic that I had not yet considered.
 
+    When I was trying to get ThymeLeaf to display the output of the calculator it offered fixes for properties and pom entries.
+
 5. Documentation and Comments:
    - it helped generate documentation comments, making it easier to document your code as you write it.
-   - It can explain code snippets and provide inline comments for better code comprehension.
+
+6. Copilot Labs looks interesting for the future.
+    This is a new feature that allows you to train Copilot on your own codebase, so it can provide more relevant suggestions.
+    It is currently in beta and is only available to a limited number of users.
+
+Summary:
+    Copilot is not the finished article by any means. Sometimes it would respond to a request without providing any feedback.
+    But it offers enough to be very valuable as a tool.
+
+    I found it most useful at points where I was stuck and needed a nudge in the right direction.
+    It would offer suggestions that I had not considered and would often throw up a solution that I had not considered.
+
+    I think longer term copilot will have all the capabilities of chatGPT. For now it would be great if we could use both.
 
 
 
-6. Code Quality and Best Practices:
-   - Copilot can suggest improvements for code quality and adherence to best practices.
-   - It can identify and suggest fixes for potential code vulnerabilities or performance issues.
 
 
-
-7. Git Integration:
-   - GitHub Copilot seamlessly integrates with Git, allowing you to manage your code changes and collaborate with others through version control.
-   - It can assist with writing commit messages and understanding Git commands.

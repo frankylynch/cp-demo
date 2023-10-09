@@ -25,20 +25,14 @@ public class CheckHttpResponse {
     @Test
     public void shouldPassIfSpringMatches(){
         String response = this.restTemplate.getForObject("http://localhost:" + port + "/" ,String.class);
-        assertThat(response.contains("Spring"));
+        assertThat(response.contains("Home"));
     }
 
-//write a similar test that checks for the word "Hello" in the response
+    // write a http test for the calculator page
     @Test
-    public void shouldPassIfHelloMatches(){
-        String response = this.restTemplate.getForObject("http://localhost:" + port + "/" ,String.class);
-        assertThat(response.contains("Hello"));
-    }
-
-    @Test
-    public void shouldPassIfIndexMatches(){
-        String response = this.restTemplate.getForObject("http://localhost:" + port + "/index" ,String.class);
-        assertThat(response.contains("index"));
+    public void shouldPassIfCalculatorPageMatches(){
+        String response = this.restTemplate.getForObject("http://localhost:" + port + "/calculator" ,String.class);
+        assertThat(response.contains("calculator"));
     }
 
 
