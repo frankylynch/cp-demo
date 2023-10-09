@@ -12,32 +12,46 @@
   </div>
 </nav>
 <div class="container">
-  <h1 class="mt-5 mb-4">Bootstrap Calculator</h1>
+  <h1 class="mt-5 mb-4">Calculator</h1>
 
-  <form action="/calculate" method="post" class="mb-4">
+  <form th:action="@{/calculate}" method="post" class="mb-5">
     <div class="row">
-      <div class="col-md-3">
-        <input type="number" class="form-control" name="num1" placeholder="Enter number" required>
+      <div class="row">
+        <div class="col-md-4">
+        <button class="btn btn-secondary btn-block" type="submit" name="num" value="1">1</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="num" value="2">2</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="num" value="3">3</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="num" value="4">4</button>
+        </div>
       </div>
-      <div class="col-md-3">
-        <select class="form-select" name="operator" required>
-          <option value="add">+</option>
-          <option value="subtract">-</option>
-          <option value="multiply">*</option>
-          <option value="divide">/</option>
-        </select>
+      <div class="row">
+        <div class="col-md-4">
+        <button class="btn btn-secondary btn-block" type="submit" name="num" value="5">5</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="num" value="6">6</button>
+          <button class="btn btn-secondary btn-block" type="submit" name="num" value="7">7</button>
+          <button class="btn btn-secondary btn-block" type="submit" name="num" value="8">8</button>
+        </div>
       </div>
-      <div class="col-md-3">
-        <input type="number" class="form-control" name="num2" placeholder="Enter number" required>
+      <div class="row">
+          <div class="col-md-4">
+          <button class="btn btn-secondary btn-block" type="submit" name="num" value="9">9</button>
+          <button class="btn btn-secondary btn-block" type="submit" name="num" value="0">0</button>
+            <button class="btn btn-secondary btn-block" type="submit" name="operation" value="clear">AC</button>
+            <button class="btn btn-secondary btn-block" type="submit" name="operation" value="=">=</button>
+
+          </div>
       </div>
-      <div class="col-md-3">
-        <button type="submit" class="btn btn-primary">Calculate</button>
-      </div>
+      <div class="col-md-4">
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="+">+</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="-">-</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="/">/</button>
+        <button class="btn btn-secondary btn-block" type="submit" name="operation" value="*">*</button>
+        </div>
+
     </div>
   </form>
-
   <div th:if="${result}" class="alert alert-success">
-    Result: <span th:text="${result}"></span>
+    <span th:text="${result}"></span>
   </div>
 
   <div th:if="${error}" class="alert alert-danger">

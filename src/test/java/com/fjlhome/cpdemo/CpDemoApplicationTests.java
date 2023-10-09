@@ -1,5 +1,6 @@
 package com.fjlhome.cpdemo;
 
+import com.fjlhome.cpdemo.utils.MathUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -10,10 +11,6 @@ class CpDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
-	}
-
-	@Test
-	void name() {
 	}
 
 	//generate a test that checks the mathUtils add method returns the addition of two input numbers

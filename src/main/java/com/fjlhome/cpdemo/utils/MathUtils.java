@@ -1,4 +1,4 @@
-package com.fjlhome.cpdemo;
+package com.fjlhome.cpdemo.utils;
 
 //generate code for math functions
 
@@ -18,6 +18,15 @@ public class MathUtils {
         }
         return outputArray;
     }
+
+    // generate a method that multiplies the inputArray by a multiplier and returns the outputArray
+    public double [] multiplyArray(double multiplier) {
+        for (int i = 0; i < inputArray.length; i++) {
+            outputArray[i] = inputArray[i] * multiplier;
+        }
+        return outputArray;
+    }
+
 
     public double sum(double a, double b) {
         return a + b;
