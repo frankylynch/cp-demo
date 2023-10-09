@@ -27,6 +27,7 @@ public class CalculatorController {
 
            model.addAttribute("result", calculator.getDisplayNumber());
            return "calculator";
-        }
+    }
+    
 }
 

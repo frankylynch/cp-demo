@@ -26,6 +26,15 @@ For instance -after  generating thymeleaf and bootstrap code (using ChatGPT) for
         <button class="btn btn-secondary btn-block" type="submit" name="operation" value="cos">cos</button>
         <button class="btn btn-secondary btn-block" type="submit" name="operation" value="tan">tan</button>
 
+      while looking at the controller code it suggested adding a clear method to the controller using an alternative path.
+      @PostMapping("/clear")
+        public String clear(Model model) {
+            CalculatorProcessor calculator = CalculatorProcessor.getInstance();
+            calculator.clear();
+            model.addAttribute("result", calculator.getDisplayNumber());
+            return "calculator";
+        }
+
 
 2. Code Generation and multi language support:
    - Copilot can generate entire functions, classes, or code snippets based on natural language descriptions or comments you provide.
@@ -83,7 +92,7 @@ For instance -after  generating thymeleaf and bootstrap code (using ChatGPT) for
     It is currently in beta and is only available to a limited number of users.
 
 Summary:
-    Copilot is not the finished article by any means. Sometimes it would respond to a request without providing any feedback.
+    Copilot is not the finished article by any means. Sometimes it would not respond to a request without providing any feedback.
     But it offers enough to be very valuable as a tool.
 
     I found it most useful at points where I was stuck and needed a nudge in the right direction.
